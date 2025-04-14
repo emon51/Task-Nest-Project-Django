@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} index {% endblock %}</title>
+</head>
+
+<body>
+
+    {% block heading %} 
+       {% if not user.is_authenticated %}
+       <b> <i> Welcome! If you already have an account, please log in. Otherwise, kindly sign up to start managing your to-do list. </i> </b> <br> 
+    {% endif %}
+    {% endblock %}
+     
+
+    <div style="display: flex; gap: 5px; margin-top: 10px; margin-bottom: 15px; ">
+        {% if not user.is_authenticated %}
+        <button> <a href="{% url 'signup' %}"> Signup </a> </button>
+        <button> <a href="{% url 'login' %}"> Login </a> </button>
+        {% else %}
+         <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit"> Logout </button>
+         </form>
+        {% endif %}
+    </div>
+
+    {% block content %}
+     
+    {% endblock %}
+
+
+</body>
+</html>

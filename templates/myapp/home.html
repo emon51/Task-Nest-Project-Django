@@ -1,0 +1,37 @@
+
+{% extends 'myapp/base.html' %}
+
+{% block title %} home {% endblock %}
+{% block heading %} <h2>  {{ user.username | capfirst }}'s World </h2> {% endblock %}
+
+{% block content %}
+
+<button>
+    <a href="{% url 'add_task' %}">Add Task</a>
+</button>
+
+<h3><u>Your to-do list:</u></h3>
+
+<table>
+    {% for task in all_task %}
+    <tr>
+        <td style="padding: 8px;">
+            <b>{{ forloop.counter }}. {{ task.title }}</b>
+        </td>
+        <td style="padding: 8px;">
+            <a href="{% url 'update_task' task.id %}">Update</a>
+        </td>
+        <td style="padding: 8px;">
+            <a href="{% url 'delete_task' task.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
+
+
+
+
+
