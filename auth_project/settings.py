@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fyvq3o))y^7d)ky@0j0w6ed8t38=htu$har3a#i+y*o+(kyls5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,16 +74,42 @@ WSGI_APPLICATION = 'auth_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+'''
+#Default
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tasknest',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': '@@emon51@@',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+'''
+
+'''
+#For local
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tasknest',         
+        'USER': 'postgres',         
+        'PASSWORD': '@@emon51@@',
+        'HOST': 'localhost',        
+        'PORT': '5432',             
+    }
+}
+'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',         
+        'USER': 'postgres',         
+        'PASSWORD': 'mAxGUzlpQPuKVAiMYiChDcunBWvzpcLU',
+        'HOST': 'shuttle.proxy.rlwy.net',        
+        'PORT': '33111',             
+    }
+}
+
+
 
 
 # Password validation
