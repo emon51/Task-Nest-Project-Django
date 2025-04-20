@@ -17,7 +17,7 @@
 
 - Language: Python
 - Backend: Django
-- Forntend: HTML
+- Frontend: HTML
 - Database: PostgreSQL
 
 
