@@ -18,7 +18,7 @@
 - Language: Python
 - Backend: Django
 - Forntend: HTML
-- Database: SQLite3
+- Database: PostgreSQL
 
 ## Clone this project
    ```
