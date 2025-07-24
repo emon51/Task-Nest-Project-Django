@@ -1,0 +1,35 @@
+
+{% extends 'task_nest_app/base.html' %}
+
+{% block title %} home {% endblock %}
+{% block heading %} <h2 style="color: blue;">  <i> Welcome! to your Nest, {{ user.username | capfirst }} </i> </h2> {% endblock %}
+
+{% block content %}
+
+<button>
+    <a href="{% url 'add_task' %}">Add Task</a>
+</button>
+
+<h3><u>Your to-do list:</u></h3>
+
+{% if not all_task %} 
+<i style="color: red"> Your to-do list is empty, please add your task </i>
+{% endif %}
+
+<table style="background-color: coral;">
+    {% for task in all_task %}
+    <tr style="background-color: aquamarine;">
+        <td style="padding: 8px;">
+            <b>{{ forloop.counter }}. {{ task.title }}</b>
+        </td>
+        <td style="padding: 8px;">
+            <a href="{% url 'update_task' task.id %}">Update</a>
+        </td>
+        <td style="padding: 8px;">
+            <a href="{% url 'delete_task' task.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
