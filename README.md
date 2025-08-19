@@ -23,7 +23,7 @@
 
 ## Clone this project
    ```
-   https://github.com/emon51/Task-Nest-Project-Django.git
+   git clone https://github.com/emon51/Task-Nest-Project-Django.git
    ```
 
 ## Demo
