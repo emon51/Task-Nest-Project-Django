@@ -21,15 +21,57 @@
 - Database: Sqlite3
 
 
-## Clone this project
-   ```
-   git clone https://github.com/emon51/Task-Nest-Project-Django.git
-   ```
 
 ## Demo
 ```
 https://youtu.be/X3KxKW0i4vE?si=DiVKcU5hRqFGxWsh
 ```
+
+# Installation & Setup
+
+## Clone this project
+   ```
+    git clone https://github.com/emon51/Task-Nest-Project-Django.git
+   ```
+
+## Create a virtual environment
+```
+python -m venv myenv
+```
+
+## Activate virtual environment (For Windows)
+```
+"myenv\Scripts\activate"
+```
+
+## Change the directory
+```
+cd Task-Nest-Project-Django
+```
+
+## Install dependencies
+```
+pip install -r requirements.txt
+```
+
+## Migrate database
+```
+python manage.py migrate
+
+```
+
+## Run the development server
+```
+python manage.py runserver
+
+```
+
+## Open in browser
+```
+http://127.0.0.1:8000/
+
+```
+
 
 
 
